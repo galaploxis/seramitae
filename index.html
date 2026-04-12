@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seramitae #23486 Echipa FTC</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<style>
+/* GLOBAL */
+* { box-sizing: border-box; }
+body {
+  margin:0;
+  font-family: Roboto, sans-serif;
+  background:#020617;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* PARTICLES */
+#particles-js {
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  z-index:-1;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top:0; width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px clamp(20px,5vw,120px);
+  background: rgba(2,6,23,0.85);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+}
+
+/* LOGO */
+header .logo { height: 80px; width: auto; }
+
+/* NAV DESKTOP */
+nav { display: flex; gap: 20px; }
+nav a { color: white; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+nav a:hover { color: #22d3ee; }
+
+/* HAMBURGER MENU */
+.nav-toggle { display: none; }
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 3px;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s;
+}
+.nav-toggle-label span::before { top: -10px; }
+.nav-toggle-label span::after { top: 10px; }
+
+/* PAGES */
+.page { display:none; padding:120px 10%; max-width:1800px; margin:auto; opacity:0; transition:opacity 0.3s; }
+.page.active { display:block; opacity:1; }
+
+/* HERO */
+.hero { height:50vh; display:flex; justify-content:center; align-items:center; text-align:center; background:linear-gradient(120deg,#6f016b,#9333ea); }
+.hero h1 { font-family: Orbitron, sans-serif; font-size: clamp(40px,8vw,90px); }
+
+/* GRID */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
+.card { background: rgba(255,255,255,0.05); padding:20px; border-radius:10px; text-align:center; }
+
+/* TEAM CARDS */
+.member img { width:100%; border-radius:10px; margin-bottom:10px; }
+.member h3 { margin:5px 0; color:#22d3ee; }
+.section-title { color:#22d3ee; font-family: Orbitron, sans-serif; }
+
+.member img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.member img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+.member {
+  transition: transform 0.3s ease;
+}
+
+.member:hover {
+  transform: translateY(-5px);
+}
+
+/* ROBOT IMAGE */
+.robot img { width:320px; border-radius:10px; }
+
+/* MOBILE */
+@media(max-width:768px) {
+  nav {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    background: rgba(2,6,23,0.95);
+    height: calc(100vh - 70px);
+    width: 200px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+    transition: right 0.3s;
+  }
+  .nav-toggle { display:block; }
+  .nav-toggle-label { display:flex; flex-direction:column; cursor:pointer; width:30px; height:25px; justify-content: space-between; }
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after { display:block; background:white; height:3px; border-radius:2px; position:relative; transition: all 0.3s; }
+  .nav-toggle-label span::before { top:-10px; }
+  .nav-toggle-label span::after { top:10px; }
+  .nav-toggle:checked + .nav-toggle-label + nav { right:0; }
+}
+
+/* HIGHLIGHTS */
+.highlight { color:#22d3ee; font-weight:500; }
+.sponsor-logo { width:100%; max-height:80px; object-fit:contain; }
+
+/* LINK COLORS */
+a:link, a:visited { color: purple; }
+a:hover { color: red; }
+a:active { color: green; }
+
+/* SPONSOR LOGO - HOVER */
+.sponsor-logo {
+  width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.sponsor-logo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.3);
+  cursor: pointer;
+}
+
+/* BLOG GALLERY */
+.blog-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.blog-gallery img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.blog-gallery img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+</style>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+</head>
+
+<body>
+<div id="particles-js"></div>
+
+<header>
+  <div class="logo-container"><img src="logo_sr.jpg" alt="Logo Seramitae #23486" class="logo"></div>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+  <nav>
+    <a onclick="showPage('home')">Acasă</a>
+    <a onclick="showPage('robot')">Robot</a>
+    <a onclick="showPage('team')">Echipa</a>
+    <a onclick="showPage('outreach')">Activități</a>
+    <a onclick="showPage('blog')">Blog</a>
+    <a onclick="showPage('sponsors')">Sponsori</a>
+    <a onclick="showPage('contact')">Contact</a>
+  </nav>
+</header>
+
+<!-- ACASĂ -->
+<div id="home" class="page active">
+  <div class="hero">
+    <div><h1>SERAMITAE</h1>
+    <p>Nu construim roboți.<br>Construim un sistem, o echipă și un impact pe termen lung.</p></div>
+  </div>
+  <h2 class="section-title">Noi suntem Seramitae!</h2>
+ <p>
+Seramitae este o echipă de robotică fondată în 2022 și formată din elevi ai Colegiului Național "Costache Negri" din Galați. <br>
+Ne reunește pasiunea pentru tehnologie și inovație, aderăm la <a href=https://maraandtom.ro/educatia-stem-ce-este-principii-jucarii-stem/ target="_blank"><b>principiile STEM</b> </a> și promovăm <a href=https://flltutorials.com/translations/ro/CoreValues/IntroductiontoCV%20(rom).pdf target="_blank"><b>valorile FIRST</b></a>în jurul nostru.<br>
+Participăm la concursurile FIRST Tech Challenge sub id <a href=https://ftcscout.org/teams/23486 target="_blank"><b> #23486 </b></a> și ne concentrăm pe dezvoltarea de soluții reale prin muncă de echipă, perseverență și dedicare.<br>
+Astăzi suntem o echipă de 14 membri și 3 mentori, uniți de aceeași misiune: să creăm impact prin robotică și educație.<br>
+Suntem recunoscători tuturor celor care au contribuit la această echipă și lucrăm pentru a îmbogăți moștenirea lor.<br>
+</p>
+<br>
+<p><b>Ce facem:</b></p>
+<p>    Construim și îmbunătățim un robot competitiv pentru FTC.</p>
+<p>    Promovăm STEM și educația tehnologică în comunitatea noastră.</p>
+<p>    Organizăm activități de outreach și colaborări cu alți tineri pasionați de robotică.</p>
+<p>    Învățăm constant prin experiment, analiză și lucru în echipă.</p>
+<br>
+<p><b>De ce Seramitae?</b></p>
+<p>Credem în valori simple, dar puternice: STEM, FIRST, colaborare, disciplină și impact.<br>
+Vrem ca munca noastră să inspire alți elevi să descopere robotica și să creadă că ideile lor pot deveni proiecte reale.
+</p>
+<br>
+<p><b>Call to action</b></p>
+<p>Explorează robotul nostru<br>
+Cunoaște echipa<br>
+Citește blogul nostru<br>
+</p>
+</div>
+
+<!-- ROBOT -->
+<div id="robot" class="page">
+  <h2 class="section-title">Robot</h2>
+  <p>Întâlnește robotul nostru SERA.</p>
+  <model-viewer
+src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
+alt="Eu sunt Sera"
+auto-rotate
+camera-controls
+animation-name="Running" autoplay
+shadow-intensity="1"
+style="width:400px;height:400px;margin:auto;display:block;">
+</model-viewer>
+  <p>Robotul nostru folosește un sistem de roți Mecanum pentru mobilitate omnidirecțională, permițând mișcări precise în orice direcție. Mecanismul de intake este optimizat pentru colectarea rapidă a elementelor, în timp ce elevatorul liniar permite poziționarea precisă a elementelor la diferite înălțimi.
+Am iterat designul de trei ori pentru a îmbunătăți stabilitatea și viteza, obținând o creștere de 40% a eficienței.</p>
+<p>
+  <div class="grid"><div class="card">Propulsie Mecanum</div><div class="card">Sistem Ridicare</div><div class="card">Intake</div></div>
+</p>
+<p>Pentru mai multe detalii despre robotul nostru, poți consulta Portofoliul Tehnic.</p>
+  <div style="text-align:center;"><button onclick="window.open('portofolio.pdf')">Descarcă Portofoliul Tehnic</button></div>
+</div>
+
+<!-- ECHIPA -->
+<div id="team" class="page">
+  <h2 class="section-title">Despre Echipă</h2>
+  <p>Seramitae este o echipă de robotică pasionată de inovație, tehnologie și performanță.</p>
+<p>Promovăm valorile FIRST și ne bazăm pe principiile STEM.</p>
+<p>Participăm la competițiile First Tech Challenge sub id <a href=https://ftcscout.org/teams/23486 target="_blank"><b> #23486 </b></a> și dezvoltăm roboți capabili să rezolve provocări din lumea reală.</p>
+  
+  <h2 class="section-title">Membri</h2>
+  <div class="grid">
+    <div class="card member"><img src="alexandra.jpg" alt="Alexandra"><h3>Alexandra</h3><p>PR & Outreach</p></div>
+    <div class="card member"><img src="amana.jpg" alt="Amana"><h3>Amana</h3><p>Programare</p><p>PR & Outreach</p></div>
+    <div class="card member"><img src="briana.jpg" alt="Briana"><h3>Briana</h3><p>PR & Outreach</p></div>
+    <div class="card member"><img src="carla.jpg" alt="Carla"><h3>Carla</h3><p>PR & Outreach</p></div>
+    <div class="card member"><img src="cosmin.jpg" alt="Cosmin"><h3>Cosmin</h3><p>Programare</p></div>
+    <div class="card member"><img src="cristiana.jpg" alt="Cristiana"><h3>Cristiana</h3><p>Mecanică & Design 3D</p><p>PR & Outreach</p></div>
+    <div class="card member"><img src="ioana.jpg" alt="Ioana"><h3>Ioana</h3><p>Programare</p><p>PR & Outreach</p></div>
+    <div class="card member"><img src="iustin.jpg" alt="Iustin"><h3>Iustin</h3><p>Mecanică</p></div>
+    <div class="card member"><img src="lavinia.jpg" alt="Lavinia"><h3>Lavinia</h3><p>PR & Outreach</p></div>
+    <div class="card member"><img src="matteo.jpg" alt="Matteo"><h3>Matteo</h3><p>Programare</p><p>Drive Team</p></div>
+    <div class="card member"><img src="mihai.jpg" alt="Mihai"><h3>Mihai</h3><p>Mecanică & Design 3D</p><p>Drive Team</p></div>
+    <div class="card member"><img src="rares.jpg" alt="Rares"><h3>Rares</h3><p>Programare</p><p>PR & Outreach</p></div>
+    <div class="card member"><img src="stefan.jpg" alt="Stefan"><h3>Stefan</h3><p>Mecanică & Design 3D</p><p>Drive Team</p></div>
+    <div class="card member"><img src="stefan1.jpg" alt="Stefan"><h3>Stefan</h3><p>Mecanică</p></div>
+  </div>
+
+  <h2 class="section-title">Mentori</h2>
+  <div class="grid">
+    <div class="card member"><img src="daniela.jpg" alt="Daniela"><h3>Daniela</h3><p>Mentor</p></div>
+    <div class="card member"><img src="marius.jpg" alt="Marius"><h3>Marius</h3><p>Mentor</p></div>
+    <div class="card member"><img src="vlad.jpg" alt="Vlad"><h3>Vlad</h3><p>Mentor</p></div>
+  </div>
+
+  <h2 class="section-title">Alumni</h2>
+  <div class="grid">
+    <div class="card member"><img src="gabi.jpg" alt="Gabi"><h3>Gabi</h3><p>???</p></div>
+    <div class="card member"><img src="mirel.jpg" alt="Mirel"><h3>Mirel</h3><p>Mecanică</p></div>
+    <div class="card member"><img src="robert.jpg" alt="Robert"><h3>Robert</h3><p>Programare</p></div>
+  </div>
+</div>
+
+<!-- ACTIVITĂȚI -->
+<div id="outreach" class="page">
+  <h2 class="section-title">Activități</h2>
+  <p>Acționăm ca ambasadori FIRST atât pe plan local, cât și internațional. Prin Caravana Seramitae inspirăm viitori lideri în tehnologie din județul Galați, iar prin STEM Beyond Borders extindem global misiunea noastră prin colaborarea cu comunitatea FIRST din diferite părți ale lumii și promovând educația STEM în regiuni unde accesul la astfel de programe este limitat.</p>
+</div>
+
+<!-- BLOG -->
+<div id="blog" class="page">
+  <h2 class="section-title">Blog</h2>
+  <p>Aici poți găsi toate informațiile despre activitatea noastră curentă și trecută, precum și o galerie foto cu munca noastre.</p>
+  <p>Apasă aici: <a href="https://www.blog.seramitae.ro" target="_blank" title="Blog și Galerie Seramitae">Blog și Galerie</a></p>
+
+  <div id="blog-gallery" class="grid blog-gallery"></div>
+</div>
+
+<!-- SPONSORI -->
+<div id="sponsors" class="page">
+  <p>
+    Sprijinul sponsorilor joacă un rol vital în atingerea celor mai înalte standarde de performanță și continuarea călătoriei noastre în competițiile FIRST Tech Challenge. Costurile cu echipamente, materiale, componente și deplasări sunt substanțiale, iar atingerea obiectivelor noastre depinde de sprijinul comunității din care facem parte.
+  </p>
+  <p>
+    Fiecare contribuție ne oferă oportunitatea de a învăța mai mult, de a ne perfecționa abilitățile și de a transforma pasiunea în experiență practică. Susținându-ne, investiți nu doar în echipa noastră, ci și în tinerii pe care dorim să-i inspirăm și să-i dezvoltăm prin valorile și munca noastră.
+  </p>
+  <p>
+    Împreună, prin noi și alături de noi, reprezentați cu mândrie comunitatea din care facem cu toții parte.
+  </p>
+  <p>
+    Orice formă de sprijin este semnificativă și are un impact concret asupra progresului nostru.
+  </p>
+
+  <h2 class="section-title">Sponsori</h2>
+<p>Mulțumim din suflet sponsorilor noștri, ale căror contribuții sunt decisive pentru activitatea noastră:</p>
+  <div class="grid">
+    <div class="card">
+      <a href="https://www.dmt-winches.com/" target="_blank" rel="noopener noreferrer">
+        <img src="dmt.png" class="sponsor-logo" alt="DMT">
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://lemacons.ro/" target="_blank" rel="noopener noreferrer">
+        <img src="lemacons.png" class="sponsor-logo" alt="Lemacons">
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://apan.ro/" target="_blank" rel="noopener noreferrer">
+        <img src="apan.png" class="sponsor-logo" alt="Apan">
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://frizongroup.ro/" target="_blank" rel="noopener noreferrer">
+        <img src="frizon.png" class="sponsor-logo" alt="Frizon">
+      </a>
+    </div>
+  </div>
+
+  <h2 class="section-title">Parteneri Educaționali</h2>
+<p>Suntem recunoscători partenerilor noștri educaționali, care sunt fundamentali pentru echipa noastră:</p>
+  <div class="grid">
+    <div class="card">
+      <a href="https://cncn.ro/" target="_blank" rel="noopener noreferrer">
+        <img src="cncn.jpg" class="sponsor-logo" alt="Colegiul Național "Costache Negri" ">
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://www.ugal.ro" target="_blank" rel="noopener noreferrer">
+        <img src="univddjgl.png" class="sponsor-logo" alt="Universitatea "Dunărea de Jos" ">
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://www.natie.ro" target="_blank" rel="noopener noreferrer">
+        <img src="natie.jpg" class="sponsor-logo" alt="Fundatia "Natie prin Educatie" ">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+  <h2 class="section-title">Contact</h2>
+  <div class="grid">
+    <div class="card">E-mail: <a href="mailto:robot@seramitae.ro">robot@seramitae.ro</a></div>
+    <div class="card">Instagram: <a href="https://www.instagram.com/clr_seramitae/" target="_blank">@clr_seramitae</a></div>
+    <div class="card">Facebook: @seramitae.robo</div>
+    <div class="card">TikTok: @seramitae.robo</div>
+    <div class="card">X: @seramitae.robo</div>
+    <div class="card">YouTube: <a href="https://www.youtube.com/@Seramitae" target="_blank">Seramitae</a></div>
+  </div>
+  <p>Adresa noastră:<br>Colegiul Național "Costache Negri"<br>strada Brăilei nr.134, 800379 Galați, România</p>
+</div>
+
+<footer style="padding:40px; text-align:center;">
+  © 2026 Seramitae #23486, Galați / România<br>
+  Contactați-ne: <a href="mailto:robot@seramitae.ro" style="color: rgb(34, 211, 238);">robot@seramitae.ro</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    color: { value: "#22d3ee" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    line_linked: { enable: true, distance: 150, color: "#22d3ee", opacity:0.4, width:1 },
+    move: { enable:true, speed:2 }
+  },
+  interactivity: { events: { onhover: { enable:true, mode:"repulse" } } }
+});
+
+</script>
+
+</body>
+</html>

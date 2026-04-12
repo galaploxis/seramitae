@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+
+  <!-- Fundal -->
+  <circle cx="50" cy="50" r="48" fill="#050510"/>
+
+  <!-- Gradient neon -->
+  <defs>
+    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff00ff"/>
+      <stop offset="100%" stop-color="#8a2eff"/>
+    </linearGradient>
+
+    <!-- Glow intens -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Antena -->
+  <line x1="50" y1="28" x2="50" y2="15"
+        stroke="url(#neonGradient)"
+        stroke-width="3"
+        filter="url(#glow)"/>
+  <circle cx="50" cy="12" r="4"
+          fill="url(#neonGradient)"
+          filter="url(#glow)"/>
+
+  <!-- Cap -->
+  <rect x="25" y="30" width="50" height="40" rx="10"
+        fill="none"
+        stroke="url(#neonGradient)"
+        stroke-width="3"
+        filter="url(#glow)"/>
+
+  <!-- Ochi cu animatie -->
+  <circle cx="40" cy="50" r="6"
+          fill="#ff66ff"
+          filter="url(#glow)">
+    <animate attributeName="r"
+             values="6;2;6"
+             dur="2s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="60" cy="50" r="6"
+          fill="#ff66ff"
+          filter="url(#glow)">
+    <animate attributeName="r"
+             values="6;2;6"
+             dur="2s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Gura -->
+  <rect x="38" y="62" width="24" height="5" rx="2"
+        fill="url(#neonGradient)"
+        filter="url(#glow)"/>
+
+</svg>
