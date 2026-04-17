@@ -4,10 +4,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Seramitae #23486 este o echipă de robotică din Galați care participă la FIRST Tech Challenge. Promovăm STEM, construim roboți și inspirăm viitori ingineri.">
+<meta name="keywords" content="FTC, robotics, Seramitae, Galați, FIRST Tech Challenge">
+<meta name="author" content="Clubul Liceal de Robotica Seramitae">
+<meta name="geo.region" content="RO-GL">
+<meta name="geo.placename" content="Galati">
+<meta property="og:title" content="<title>Seramitae – Echipă de Robotică din Galați | #23486 FIRST Tech Challenge</title>">
+<meta property="og:description" content="Echipă de robotică din Galați">
+<meta property="og:image" content="logo_sr.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://seramitae.ro">
 <title>Seramitae #23486 Echipa FTC</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
 <style>
 /* GLOBAL */
@@ -183,6 +195,60 @@ a:active { color: green; }
   filter: brightness(1.2);
   cursor: pointer;
 }
+
+/* SCROLL SMOOTH */
+html {
+  scroll-behavior: smooth;
+}
+
+/* CARD HOVER */
+.card {
+  transition: all 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 0 20px rgba(34,211,238,0.3);
+}
+
+/* BANNER STADIU BETA */
+.beta-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(147, 51, 234, 0.9);
+  color: white;
+  overflow: hidden;
+  z-index: 9999;
+  border-top: 2px solid #22d3ee;
+}
+
+.beta-track {
+  display: flex;
+  width: max-content;
+  animation: scrollBanner 15s linear infinite;
+}
+
+.beta-track span {
+  white-space: nowrap;
+  font-weight: 500;
+  padding: 10px 0;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+@keyframes scrollBanner {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+body {
+  padding-bottom: 50px;
+}
+
 </style>
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -190,23 +256,42 @@ a:active { color: green; }
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Clubul Liceal de Robotica Seramitae Galati #23486",
+  "url": "https://seramitae.ro",
+  "logo": "https://seramitae.ro/logo_sr.jpg",
+  "sameAs": [
+    "https://www.instagram.com/clr_seramitae/",
+    "https://www.youtube.com/@Seramitae",
+    "https://www.facebook.com/61560462058151/"
+  ]
+}
+</script>
+
 </head>
 
 <body>
 <div id="particles-js"></div>
 
 <header>
-  <div class="logo-container"><img src="logo_sr.jpg" alt="Logo Seramitae #23486" class="logo"></div>
+
+<div class="logo-container" onclick="showPage('home')" style="cursor:pointer;">
+  <img src="logo_sr.jpg" alt="Logo Seramitae #23486" class="logo">
+</div>
+
   <input type="checkbox" id="nav-toggle" class="nav-toggle">
   <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
   <nav>
-    <a onclick="showPage('home')">Acasă</a>
-    <a onclick="showPage('robot')">Robot</a>
-    <a onclick="showPage('team')">Echipa</a>
-    <a onclick="showPage('outreach')">Activități</a>
-    <a onclick="showPage('blog')">Blog</a>
-    <a onclick="showPage('sponsors')">Sponsori</a>
-    <a onclick="showPage('contact')">Contact</a>
+    <a href="#acasa" onclick="showPage('home')">Acasă</a>
+    <a href="#robot" onclick="showPage('robot')">Robot</a>
+    <a href="#echipa" onclick="showPage('team')">Echipa</a>
+    <a href="#activitati" onclick="showPage('outreach')">Activități</a>
+    <a href="#blog" onclick="showPage('blog')">Blog</a>
+    <a href="#sponsori" onclick="showPage('sponsors')">Sponsori</a>
+    <a href="#contact" onclick="showPage('contact')">Contact</a>
   </nav>
 </header>
 
@@ -219,24 +304,29 @@ a:active { color: green; }
   <h2 class="section-title">Noi suntem Seramitae!</h2>
  <p>
 Seramitae este o echipă de robotică fondată în 2022 și formată din elevi ai Colegiului Național "Costache Negri" din Galați. <br>
-Ne reunește pasiunea pentru tehnologie și inovație, aderăm la <a href=https://maraandtom.ro/educatia-stem-ce-este-principii-jucarii-stem/ target="_blank"><b>principiile STEM</b> </a> și promovăm <a href=https://flltutorials.com/translations/ro/CoreValues/IntroductiontoCV%20(rom).pdf target="_blank"><b>valorile FIRST</b></a>în jurul nostru.<br>
-Participăm la concursurile FIRST Tech Challenge sub id <a href=https://ftcscout.org/teams/23486 target="_blank"><b> #23486 </b></a> și ne concentrăm pe dezvoltarea de soluții reale prin muncă de echipă, perseverență și dedicare.<br>
+Ne reunește pasiunea pentru tehnologie și inovație, aderăm la <a href="https://maraandtom.ro/educatia-stem-ce-este-principii-jucarii-stem/" target="_blank"><b>principiile STEM</b> </a> și promovăm <a href="https://flltutorials.com/translations/ro/CoreValues/IntroductiontoCV%20(rom).pdf" target="_blank"><b>valorile FIRST</b></a> în jurul nostru.<br>
+Participăm la concursurile FIRST Tech Challenge sub id <a href="https://ftcscout.org/teams/23486" target="_blank"><b> #23486 </b></a> și ne concentrăm pe dezvoltarea de soluții reale prin muncă de echipă, perseverență și dedicare.<br>
 Astăzi suntem o echipă de 14 membri și 3 mentori, uniți de aceeași misiune: să creăm impact prin robotică și educație.<br>
 Suntem recunoscători tuturor celor care au contribuit la această echipă și lucrăm pentru a îmbogăți moștenirea lor.<br>
 </p>
 <br>
-<p><b>Ce facem:</b></p>
+<h2 class="section-title">Misiunea Seramitae</h2>
+<p>Seramitae nu este doar o echipă de robotică.
+Este o comunitate care formează viitori ingineri, lideri și inovatori.
 <p>    Construim și îmbunătățim un robot competitiv pentru FTC.</p>
 <p>    Promovăm STEM și educația tehnologică în comunitatea noastră.</p>
 <p>    Organizăm activități de outreach și colaborări cu alți tineri pasionați de robotică.</p>
 <p>    Învățăm constant prin experiment, analiză și lucru în echipă.</p>
 <br>
-<p><b>De ce Seramitae?</b></p>
+<h2 class="section-title">Credo Seramitae</h2>
 <p>Credem în valori simple, dar puternice: STEM, FIRST, colaborare, disciplină și impact.<br>
-Vrem ca munca noastră să inspire alți elevi să descopere robotica și să creadă că ideile lor pot deveni proiecte reale.
-</p>
-<br>
-<p><b>Call to action</b></p>
+Vrem ca munca noastră să inspire alți elevi să descopere robotica și să creadă că ideile lor pot deveni proiecte reale.<br>
+<p>
+Fiecare robot construit este o lecție.<br>
+Fiecare competiție este un pas înainte.<br>
+Fiecare elev inspirat este o victorie.<br>
+</p><br>
+<h2 class="section-title">Cunoaște Seramitae!</h2>
 <p>Explorează robotul nostru<br>
 Cunoaște echipa<br>
 Citește blogul nostru<br>
@@ -256,6 +346,13 @@ animation-name="Running" autoplay
 shadow-intensity="1"
 style="width:400px;height:400px;margin:auto;display:block;">
 </model-viewer>
+
+<div class="grid">
+  <div class="card">⚡ Viteză: 2.5 m/s</div>
+  <div class="card">🎯 Precizie: 95%</div>
+  <div class="card">🔄 Iterații: 3 versiuni</div>
+</div>
+
   <p>Robotul nostru folosește un sistem de roți Mecanum pentru mobilitate omnidirecțională, permițând mișcări precise în orice direcție. Mecanismul de intake este optimizat pentru colectarea rapidă a elementelor, în timp ce elevatorul liniar permite poziționarea precisă a elementelor la diferite înălțimi.
 Am iterat designul de trei ori pentru a îmbunătăți stabilitatea și viteza, obținând o creștere de 40% a eficienței.</p>
 <p>
@@ -274,34 +371,34 @@ Am iterat designul de trei ori pentru a îmbunătăți stabilitatea și viteza, 
   
   <h2 class="section-title">Membri</h2>
   <div class="grid">
-    <div class="card member"><img src="alexandra.jpg" alt="Alexandra"><h3>Alexandra</h3><p>PR & Outreach</p></div>
-    <div class="card member"><img src="amana.jpg" alt="Amana"><h3>Amana</h3><p>Programare</p><p>PR & Outreach</p></div>
-    <div class="card member"><img src="briana.jpg" alt="Briana"><h3>Briana</h3><p>PR & Outreach</p></div>
-    <div class="card member"><img src="carla.jpg" alt="Carla"><h3>Carla</h3><p>PR & Outreach</p></div>
-    <div class="card member"><img src="cosmin.jpg" alt="Cosmin"><h3>Cosmin</h3><p>Programare</p></div>
-    <div class="card member"><img src="cristiana.jpg" alt="Cristiana"><h3>Cristiana</h3><p>Mecanică & Design 3D</p><p>PR & Outreach</p></div>
-    <div class="card member"><img src="ioana.jpg" alt="Ioana"><h3>Ioana</h3><p>Programare</p><p>PR & Outreach</p></div>
-    <div class="card member"><img src="iustin.jpg" alt="Iustin"><h3>Iustin</h3><p>Mecanică</p></div>
-    <div class="card member"><img src="lavinia.jpg" alt="Lavinia"><h3>Lavinia</h3><p>PR & Outreach</p></div>
-    <div class="card member"><img src="matteo.jpg" alt="Matteo"><h3>Matteo</h3><p>Programare</p><p>Drive Team</p></div>
-    <div class="card member"><img src="mihai.jpg" alt="Mihai"><h3>Mihai</h3><p>Mecanică & Design 3D</p><p>Drive Team</p></div>
-    <div class="card member"><img src="rares.jpg" alt="Rares"><h3>Rares</h3><p>Programare</p><p>PR & Outreach</p></div>
-    <div class="card member"><img src="stefan.jpg" alt="Stefan"><h3>Stefan</h3><p>Mecanică & Design 3D</p><p>Drive Team</p></div>
-    <div class="card member"><img src="stefan1.jpg" alt="Stefan"><h3>Stefan</h3><p>Mecanică</p></div>
+    <div class="card member"><img src="alexandra.jpg" alt="Alexandra - PR & Outreach" loading="lazy"><h3>Alexandra</h3><p>PR & Outreach</p></div>
+    <div class="card member"><img src="amana.jpg" alt="Amana - PR & Outreach" loading="lazy"><h3>Amana</h3><p>Programare</p><p>PR & Outreach</p></div>
+    <div class="card member"><img src="briana.jpg" alt="Briana - PR & Outreach" loading="lazy"><h3>Briana</h3><p>PR & Outreach</p></div>
+    <div class="card member"><img src="carla.jpg" alt="Carla - PR & Outreach" loading="lazy"><h3>Carla</h3><p>PR & Outreach</p></div>
+    <div class="card member"><img src="cosmin.jpg" alt="Cosmin - Programare" loading="lazy"><h3>Cosmin</h3><p>Programare</p></div>
+    <div class="card member"><img src="cristiana.jpg" alt="Cristiana - Mecanică & Design 3D" loading="lazy"><h3>Cristiana</h3><p>Mecanică & Design 3D</p><p>PR & Outreach</p></div>
+    <div class="card member"><img src="ioana.jpg" alt="Ioana - PR & Outreach" loading="lazy"><h3>Ioana</h3><p>Programare</p><p>PR & Outreach</p></div>
+    <div class="card member"><img src="iustin.jpg" alt="Iustin - Mecanică" loading="lazy"><h3>Iustin</h3><p>Mecanică</p></div>
+    <div class="card member"><img src="lavinia.jpg" alt="Lavinia - PR & Outreach" loading="lazy"><h3>Lavinia</h3><p>PR & Outreach</p></div>
+    <div class="card member"><img src="matteo.jpg" alt="Matteo - Programare" loading="lazy"><h3>Matteo</h3><p>Programare</p><p>Drive Team</p></div>
+    <div class="card member"><img src="mihai.jpg" alt="Mihai - Mecanică & Design 3D" loading="lazy"><h3>Mihai</h3><p>Mecanică & Design 3D</p><p>Drive Team</p></div>
+    <div class="card member"><img src="rares.jpg" alt="Rares - Programare" loading="lazy"><h3>Rares</h3><p>Programare</p><p>PR & Outreach</p></div>
+    <div class="card member"><img src="stefan.jpg" alt="Stefan - Mecanică & Design 3D" loading="lazy"><h3>Stefan</h3><p>Mecanică & Design 3D</p><p>Drive Team</p></div>
+    <div class="card member"><img src="stefan1.jpg" alt="Stefan - Mecanică" loading="lazy"><h3>Stefan</h3><p>Mecanică</p></div>
   </div>
 
   <h2 class="section-title">Mentori</h2>
   <div class="grid">
-    <div class="card member"><img src="daniela.jpg" alt="Daniela"><h3>Daniela</h3><p>Mentor</p></div>
-    <div class="card member"><img src="marius.jpg" alt="Marius"><h3>Marius</h3><p>Mentor</p></div>
-    <div class="card member"><img src="vlad.jpg" alt="Vlad"><h3>Vlad</h3><p>Mentor</p></div>
+    <div class="card member"><img src="daniela.jpg" alt="Daniela - Mentor" loading="lazy"><h3>Daniela</h3><p>Mentor</p></div>
+    <div class="card member"><img src="marius.jpg" alt="Marius - Mentor" loading="lazy"><h3>Marius</h3><p>Mentor</p></div>
+    <div class="card member"><img src="vlad.jpg" alt="Vlad - Mentor" loading="lazy"><h3>Vlad</h3><p>Mentor</p></div>
   </div>
 
   <h2 class="section-title">Alumni</h2>
   <div class="grid">
-    <div class="card member"><img src="gabi.jpg" alt="Gabi"><h3>Gabi</h3><p>???</p></div>
-    <div class="card member"><img src="mirel.jpg" alt="Mirel"><h3>Mirel</h3><p>Mecanică</p></div>
-    <div class="card member"><img src="robert.jpg" alt="Robert"><h3>Robert</h3><p>Programare</p></div>
+    <div class="card member"><img src="gabi.jpg" alt="Gabi - Alumni" loading="lazy"><h3>Gabi</h3><p>???</p></div>
+    <div class="card member"><img src="mirel.jpg" alt="Mirel- Alumni" loading="lazy"><h3>Mirel</h3><p>Mecanică</p></div>
+    <div class="card member"><img src="robert.jpg" alt="Robert - Alumni" loading="lazy"><h3>Robert</h3><p>Programare</p></div>
   </div>
 </div>
 
@@ -309,6 +406,13 @@ Am iterat designul de trei ori pentru a îmbunătăți stabilitatea și viteza, 
 <div id="outreach" class="page">
   <h2 class="section-title">Activități</h2>
   <p>Acționăm ca ambasadori FIRST atât pe plan local, cât și internațional. Prin Caravana Seramitae inspirăm viitori lideri în tehnologie din județul Galați, iar prin STEM Beyond Borders extindem global misiunea noastră prin colaborarea cu comunitatea FIRST din diferite părți ale lumii și promovând educația STEM în regiuni unde accesul la astfel de programe este limitat.</p>
+
+<div class="grid">
+  <div class="card"><h2 class="counter" data-target="150">0</h2><p>Elevi impactați</p></div>
+  <div class="card"><h2 class="counter" data-target="12">0</h2><p>Evenimente</p></div>
+  <div class="card"><h2 class="counter" data-target="6">0</h2><p>Școli vizitate</p></div>
+</div>
+
 </div>
 
 <!-- BLOG -->
@@ -318,10 +422,24 @@ Am iterat designul de trei ori pentru a îmbunătăți stabilitatea și viteza, 
   <p>Apasă aici: <a href="https://www.blog.seramitae.ro" target="_blank" title="Blog și Galerie Seramitae">Blog și Galerie</a></p>
 
   <div id="blog-gallery" class="grid blog-gallery"></div>
+
+<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%;">
+  <iframe 
+    src="https://www.youtube.com/embed/99QKCdKTVmQ"
+    style="position:absolute; top:0; left:0; width:100%; height:100%;"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
 </div>
 
 <!-- SPONSORI -->
 <div id="sponsors" class="page">
+
+<h2 class="section-title">Powered by our partners</h2>
+<p>Împreună construim viitorul.</p>
+
   <p>
     Sprijinul sponsorilor joacă un rol vital în atingerea celor mai înalte standarde de performanță și continuarea călătoriei noastre în competițiile FIRST Tech Challenge. Costurile cu echipamente, materiale, componente și deplasări sunt substanțiale, iar atingerea obiectivelor noastre depinde de sprijinul comunității din care facem parte.
   </p>
@@ -365,17 +483,17 @@ Am iterat designul de trei ori pentru a îmbunătăți stabilitatea și viteza, 
   <div class="grid">
     <div class="card">
       <a href="https://cncn.ro/" target="_blank" rel="noopener noreferrer">
-        <img src="cncn.jpg" class="sponsor-logo" alt="Colegiul Național "Costache Negri" ">
+        <img src="cncn.jpg" class="sponsor-logo" alt="Colegiul Național Costache Negri">
       </a>
     </div>
     <div class="card">
       <a href="https://www.ugal.ro" target="_blank" rel="noopener noreferrer">
-        <img src="univddjgl.png" class="sponsor-logo" alt="Universitatea "Dunărea de Jos" ">
+        <img src="univddjgl.png" class="sponsor-logo" alt="Universitatea Dunărea de Jos">
       </a>
     </div>
     <div class="card">
       <a href="https://www.natie.ro" target="_blank" rel="noopener noreferrer">
-        <img src="natie.jpg" class="sponsor-logo" alt="Fundatia "Natie prin Educatie" ">
+        <img src="natie.jpg" class="sponsor-logo" alt="Fundatia Natie prin Educatie">
       </a>
     </div>
   </div>
@@ -387,7 +505,7 @@ Am iterat designul de trei ori pentru a îmbunătăți stabilitatea și viteza, 
   <div class="grid">
     <div class="card">E-mail: <a href="mailto:robot@seramitae.ro">robot@seramitae.ro</a></div>
     <div class="card">Instagram: <a href="https://www.instagram.com/clr_seramitae/" target="_blank">@clr_seramitae</a></div>
-    <div class="card">Facebook: @seramitae.robo</div>
+    <div class="card">Facebook: <a href="https://www.facebook.com/61560462058151/" target="_blank">@Seramitae Robo</a></div>
     <div class="card">TikTok: @seramitae.robo</div>
     <div class="card">X: @seramitae.robo</div>
     <div class="card">YouTube: <a href="https://www.youtube.com/@Seramitae" target="_blank">Seramitae</a></div>
@@ -405,6 +523,9 @@ Am iterat designul de trei ori pentru a îmbunătăți stabilitatea și viteza, 
 function showPage(id){
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+
+  // închide meniul pe mobil
+  document.getElementById('nav-toggle').checked = false;
 }
 
 particlesJS("particles-js", {
@@ -422,5 +543,35 @@ particlesJS("particles-js", {
 
 </script>
 
+<script>
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+  const update = () => {
+    const target = +counter.getAttribute('data-target');
+    const current = +counter.innerText;
+    const increment = target / 100;
+
+    if(current < target){
+      counter.innerText = Math.ceil(current + increment);
+      setTimeout(update, 20);
+    } else {
+      counter.innerText = target + "+";
+    }
+  };
+  update();
+});
+</script>
+
+<!-- BANNER STADIU BETA -->
+<div class="beta-banner">
+  <div class="beta-track">
+    <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
+    <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
+    <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
+    <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
+    <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
+  </div>
+</div>
 </body>
 </html>
