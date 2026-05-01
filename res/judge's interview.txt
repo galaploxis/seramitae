@@ -1,0 +1,77 @@
+🔹 ÎNTREBAREA 1 (CLASICĂ — FOARTE IMPORTANTĂ)
+
+“Tell us about your engineering process this season.”
+
+💡 RĂSPUNS MODEL (nivel Think Award)
+
+This season, our engineering process focused on iterative design and data-driven decisions.
+
+We started by identifying a key issue: instability during the lifting phase, which affected scoring consistency.
+
+We analyzed the problem by studying center of mass distribution and structural stress points.
+
+Then, we went through three full design iterations, testing each version in real match conditions.
+
+As a result, we improved our efficiency by 40% and achieved much more consistent performance during matches.
+
+🧠 DE CE E PERFECT
+
+✔ ai structură (problem → solution → result)
+✔ ai cifre
+✔ ai logică
+
+🎤 ÎNTREBAREA 2 (VERY COMMON)
+
+“What was your biggest challenge and how did you overcome it?”
+
+💡 RĂSPUNS MODEL
+
+Our biggest challenge was balancing stability with speed.
+
+Initially, improving stability made the robot heavier and slower.
+
+We overcame this by redesigning the lift system using lighter materials and optimizing geometry instead of adding mass.
+
+This allowed us to maintain speed while significantly improving stability.
+
+🎤 ÎNTREBAREA 3 (CHEIE PENTRU THINK AWARD)
+
+“How do you ensure your design decisions are effective?”
+
+💡 RĂSPUNS MODEL
+
+We rely on testing and iteration.
+
+Every design decision is validated through real-world testing and performance data.
+
+If a solution doesn’t improve efficiency or consistency, we redesign it.
+
+This iterative approach ensures continuous improvement.
+
+🎤 ÎNTREBAREA 4 (IMPACT)
+
+“Tell us about your outreach and its impact.”
+
+💡 RĂSPUNS MODEL
+
+We focused on making STEM accessible to younger students.
+
+This season, we organized workshops for over 287 students across 18 schools.
+
+Our goal was not just to teach robotics, but to inspire curiosity and problem-solving skills.
+
+We also built connections with over 100 teams globally to exchange knowledge and best practices.
+
+🎤 ÎNTREBAREA 5 (ADVANCED)
+
+“What makes your team different?”
+
+💡 RĂSPUNS MODEL (IMPORTANT)
+
+What sets us apart is our mindset.
+
+We don’t just build a robot — we build a system.
+
+Our focus is on continuous improvement, collaboration, and creating long-term impact through engineering and outreach.
+
+Every failure is treated as a learning opportunity.

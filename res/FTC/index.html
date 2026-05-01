@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seramitae #23486 FTC Team</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<style>
+
+/* GLOBAL */
+*{box-sizing:border-box;}
+
+body{
+margin:0;
+font-family:Roboto;
+background:#020617;
+color:white;
+overflow-x:hidden;
+}
+
+/* PARTICLES */
+#particles-js{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* NAVBAR */
+header{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px clamp(20px, 5vw, 120px);
+background:rgba(2,6,23,0.8);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+}
+
+nav a{
+margin-left:clamp(10px,2vw,25px);
+color:white;
+text-decoration:none;
+cursor:pointer;
+}
+
+nav a:hover{color:#22d3ee}
+
+/* PAGE */
+.page{
+display:none;
+padding:120px 10%;
+max-width:1200px;
+margin:auto;
+opacity:0;
+transition:opacity 0.3s;
+}
+
+.page.active{
+display:block;
+opacity:1;
+}
+
+/* HERO */
+.hero{
+height:50vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(120deg,#1e3a8a,#9333ea);
+}
+
+.hero h1{
+font-family:Orbitron;
+font-size:clamp(40px,8vw,90px);
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+
+/* TEAM CARDS */
+.member img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.member h3{
+margin:5px 0;
+color:#22d3ee;
+}
+
+.section-title{
+color:#22d3ee;
+font-family:Orbitron;
+}
+
+/* ROBOT */
+
+.robot img{
+width:320px;
+border-radius:10px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+header{
+flex-direction:column;
+gap:10px;
+}
+}
+
+.highlight{
+color:#22d3ee;
+font-weight:500;
+}
+
+.sponsor-logo{
+width:100%;
+max-height:80px;
+object-fit:contain;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+  <div style="font-family: Orbitron; color: rgb(34, 211, 238);">
+    Seramitae #23486
+  </div>
+
+  <nav>
+	<a onclick="showPage('home')">Home</a>
+	<a onclick="showPage('robot')">Robot</a>
+	<a onclick="showPage('team')">Team</a>
+	<a onclick="showPage('outreach')">Outreach</a>
+	<a onclick="showPage('sponsors')">Sponsors</a>
+	<a onclick="showPage('contact')">Contact</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="hero">
+  <div>
+	<h1>SERAMITAE</h1>
+	<p>We don’t build robots.
+	We build a system, a team, and a long-term impact.</p>
+  </div>
+</div>
+<h2 class="section-title">Our Story</h2>
+<p class="story">
+Founded in 2023, the team Seramitae started as a small group of students driven by curiosity.
+Our goal was simple: to understand how things work and push beyond our limits.
+<br>
+<p>
+Through failure, redesign, and persistence, we transform challenges into innovation.
+Today, we are a team of <span class="highlight">15 members and 2 mentors</span>, united by a vision:
+<span class="highlight">engineering solutions that create real impact</span>.
+</p>
+<p>
+We adhere to the STEM principles and we spread the FIRST values around us.
+We are grateful to all those who have contributed to this team over time and we work hard to enrich their legacy.
+</p>
+</p>
+</div>
+
+<!-- ROBOT -->
+<div id="robot" class="page">
+<h2>Robot</h2>
+
+Please, meet our actual robot, named SERA.
+<br>
+<br>
+<br>
+
+<model-viewer
+src="robot.glb"
+alt="Eu sunt Sara"
+auto-rotate
+camera-controls
+shadow-intensity="1"
+style="width:400px;height:400px;margin:auto;display:block;">
+</model-viewer>
+
+<p>
+Our robot uses a Mecanum wheel system for omnidirectional mobility, enbling precise movement in any direction. The intake mechanism is optimized for rapid collection of elements, while the linear elevator allow the precise placing of elements at various heights.
+We iterated the design three times for improving the stability and speed, achieving an increase of 40% in efficiency.
+</p>
+
+<div class="grid">
+<div class="card">Mecanum Drive</div>
+<div class="card">Lift System</div>
+<div class="card">Intake</div>
+
+</div>
+
+<button onclick="window.open('portfolio.pdf')">
+  Download Engineering Portfolio
+</button>
+
+</div>
+
+<!-- ABOUT TEAM -->
+<div id="team" class="page">
+  <h2 class="section-title">About the Team</h2>
+
+  <p>
+    	Seramitae is a robotics team passionate about innovation, technology, and performance.
+	<br>
+	We spread around the FIRST values and we stand on the STEM principles.
+	<br>
+	We participate in First Tech Challenge competitions under id #23486 and we develop robots capable of solving real-world challenges.
+<br>
+  </p>
+
+  <br>
+
+  <h2 class="section-title">Members</h2>
+
+  <div class="grid">
+
+    <div class="card member">
+      <img src="carla.jpg">
+      <h3>Carla</h3>
+      <p>PR & Media</p>
+    </div>
+
+    <div class="card member">
+      <img src="cosmin.jpg">
+      <h3>Cosmin</h3>
+      <p>Programmer</p>
+    </div>
+
+    <div class="card member">
+      <img src="iustin.jpg">
+      <h3>Iustin</h3>
+      <p>Mechanical</p>
+    </div>
+
+    <div class="card member">
+      <img src="lavinia.jpg">
+      <h3>Lavinia</h3>
+      <p>PR & Media</p>
+    </div>
+
+    <div class="card member">
+      <img src="matteo.jpg">
+      <h3>Matteo</h3>
+      <p>Programmer</p>
+    </div>
+
+    <div class="card member">
+      <img src="rares.jpg">
+      <h3>Rares</h3>
+      <p>Programmer</p>
+    </div>
+
+    <div class="card member">
+      <img src="stefan.jpg">
+      <h3>Stefan</h3>
+      <p>Mechanical</p>
+    </div>
+
+    <div class="card member">
+      <img src="member3.jpg">
+      <h3>Nume Membru</h3>
+      <p>Electronics</p>
+    </div>
+
+  </div>
+
+<h2 class="section-title">Mentors</h2>
+
+  <div class="grid">
+
+    <div class="card member">
+      <img src="daniela.jpg">
+      <h3>Daniela</h3>
+      <p>Mentor</p>
+    </div>
+
+    <div class="card member">
+      <img src="marius.jpg">
+      <h3>Marius</h3>
+      <p>Mentor</p>
+    </div>
+
+  </div>
+
+<h2 class="section-title">Alumni</h2>
+
+  <div class="grid">
+
+    <div class="card member">
+      <img src="Dan.jpg">
+      <h3>Dan</h3>
+      <p>Mentor</p>
+    </div>
+
+    <div class="card member">
+      <img src="mirel.jpg">
+      <h3>Mirel</h3>
+      <p>Mechanical</p>
+    </div>
+
+    <div class="card member">
+      <img src="robert.jpg">
+      <h3>Robert</h3>
+      <p>Programmer</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- OUTREACH -->
+<div id="outreach" class="page">
+<h2>Outreach</h2>
+<p>200+ elevi impactați, workshop-uri STEM.</p>
+</div>
+
+<!-- SPONSORS -->
+<div id="sponsors" class="page">
+<p>
+Sponsor support plays a vital role in helping us reach the highest standards of performance and continue our journey in FIRST Tech Challenge competitions. The cost of equipment, materials, components, and travel are substantial, and achieving our goals depends on the support of the community we are proud to be part of.
+</p><p>
+Every contribution gives us the opportunity to learn more, refine our abilities, and transform our passion into hands-on experience. By supporting us, you are investing not only in our team, but also in the young people we aim to inspire and develop through our values and work.
+</p><p>
+Together, through us and alongside us, you proudly represent the community we all belong to.
+</p><p>
+Any form of support is meaningful and has a tangible impact on our progress.
+</p>
+
+  <h2 class="section-title">Sponsors</h2>
+
+We wholeheartedly thank our sponsors, whose contributions are decisive for our activity:
+<br>
+  <div class="grid">
+    <div class="card"><img src="dmt.png" class="sponsor-logo"></div>
+    <div class="card"><img src="lemacons.png" class="sponsor-logo"></div>
+    <div class="card"><img src="apan.png" class="sponsor-logo"></div>
+    <div class="card"><img src="frizon.png" class="sponsor-logo"></div>
+  </div>
+
+<h2 class="section-title">Edcational partners</h2>
+
+We are grateful to our educational partners, who are the foundations of this team:
+<br>
+  <div class="grid">
+    <div class="card"><img src="cncn.jpg" class="sponsor-logo"></div>
+    <div class="card"><img src="univddjgl.png" class="sponsor-logo"></div>
+  </div>
+
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+  <h2 class="section-title">Contact</h2>
+
+  <div class="grid">
+    <div class="card">E-mail: robot@seramitae.ro</div>
+    <div class="card">Instagram: @seramitae.robo</div>
+    <div class="card">Facebook: @seramitae.robo</div>
+    <div class="card">TikTok: @seramitae.robo</div>
+    <div class="card">Telegram: @seramitae.robo</div>
+    <div class="card">YouTube: @seramitae.robo</div>
+  </div>
+
+<p>
+<br>
+<br>
+<br>
+Our address:<br><br>
+Colegiul Național "Costache Negri"<br>
+strada Brăilei nr.134, 800379 Galați, România<br>
+</p>
+</div>
+
+<footer style="padding: 40px; text-align: center;">
+  © 2026 Seramitae #23486, Galați / România
+<p style="text-align:center;">
+  Contact us:
+  <a href="mailto:robot@seramitae.ro" style="color: rgb(34, 211, 238);">
+    robot@seramitae.ro
+  </a>
+</footer>
+</p>
+
+<!-- PARTICLES -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    color: { value: "#22d3ee" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#22d3ee",
+      opacity: 0.4,
+      width: 1
+    },
+    move: { enable: true, speed: 2 }
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: true, mode: "repulse" }
+    }
+  }
+});
+</script>
+
+</body>
+</html>

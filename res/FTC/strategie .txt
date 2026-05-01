@@ -1,0 +1,40 @@
+## Strategie câștigătoare FTC
+
+**Strategia se axează pe 50% teren (puncte meciuri) + 50% premii juriul**, conform manualului oficial. România excelează (top mondial 2025), deci focus pe **Gracious Professionalism** și portofoliu. [ro.wikipedia](https://ro.wikipedia.org/wiki/FIRST_Tech_Challenge)
+
+### Pregătire echipă (luni 1-6)
+- **Recrutare**: 10-15 elevi (ingineri, programatori, design). 2 mentori adulți (inginer IT/mecanică).
+- **Buget**: 5000-7000€ (kit AS1002T ~1500€ + piese REV Robotics).
+- **Diviziune roluri**:
+  - Mecanică: CAD SolidWorks/Fusion 360.
+  - Software: Java/Blocks (Control Hub).
+  - Outreach: Portofoliu, social media.
+
+### Design robot (Kickoff - Regională)
+- **Analiză joc**: Dezasamblează manualul (ex. „Into the Deep” 2025-26: subacvatic). [tvrinfo](https://tvrinfo.ro/romania-premiata-din-nou-la-campionatul-mondial-de-robotica-first-tech-challenge-2025/)
+- **Prototyping rapid**: Build v1 în 2 săptămâni (drive mecanum, lift, intake).
+- **Scor maxim autonom**: 40 puncte (teleop 60%).
+
+### Performanță teren
+- **Meciuri**: Alianțe 2v2; țintește Top-8 pentru alianțe câștigătoare (calificare directă).
+- **Training**: 100+ meciuri simulate; driver skills (end-game park).
+
+### Premii juriul (cheie calificare)
+| Premiu          | Focus                              | Puncte calificare |
+|-----------------|------------------------------------|-------------------|
+| **Inspire**    | Totul (robot + outreach)          | Directă          |
+| **Think**      | Engineering notebook (math/CAD)   | Top              |
+| **Connect**    | Impact comunitate (eventuri)      | Sigură           |
+| **Control**    | Programare senzorii               | Tehnică          |
+
+**Portofoliu esențial**: Jurnal zilnic (decizii, eșecuri, outreach).
+
+### Calendar România 2026
+- **Kickoff**: Sept 2025.
+- **Regională Sud**: Ian 2026 (București).
+- **Național**: Martie (Cluj).
+- **Mondial**: Aprilie Houston (top 5 RO califică). [usamv](https://usamv.ro/first-tech-challenge-romania-da-startul-celei-de-a-10-a-editii-a-competitiei-odata-cu-inceperea-regionalei-sud-bucuresti/)
+
+**Exemplu succes RO**: Echipe ca TehnoRaptors – robot modular, outreach școli (top mondial). [tvrinfo](https://tvrinfo.ro/romania-premiata-din-nou-la-campionatul-mondial-de-robotica-first-tech-challenge-2025/)
+
+**Sfat final**: Colaborează echipe RO (Gracious Prof.); testează 24/7 pre-competiție. Succes – România domină FTC! [ro.wikipedia](https://ro.wikipedia.org/wiki/FIRST_Tech_Challenge)

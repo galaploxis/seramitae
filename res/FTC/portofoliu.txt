@@ -1,0 +1,35 @@
+În cadrul competiției FIRST Tech Challenge (FTC), echipele folosesc două documente esențiale pentru a-și demonstra evoluția și performanța: jurnalul de inginerie și portofoliul.
+
+    Jurnalul de inginerie reprezintă povestea completă a echipei — un document în care sunt consemnate toate etapele de proiectare, testare, ideile încercate și deciziile tehnice. Este dovada că robotul și strategia au fost dezvoltate printr-un proces organizat și atent documentat.
+
+    Portofoliul este versiunea scurtă, profesionistă și bine structurată a jurnalului. Acesta evidențiază cele mai importante progrese, soluții tehnice și rezultate, fiind documentul principal analizat de jurați pentru acordarea premiilor.
+
+Aceste două materiale arată nu doar ce a construit echipa, ci și cum a ajuns acolo — iar în FTC, procesul contează la fel de mult ca produsul final.
+
+
+
+## Cum să scrii un portofoliu câștigător FTC
+
+Portofoliul **trebuie să fie PDF 10-20 pagini**, profesionist (Canva/PowerPoint), cu **procesul de inginerie** ca focus (nu doar robotul final). Jurații FTC România evaluează **Gracious Professionalism** și impact (ex. Eastern Foxes câștigă anual). [robosapiens](https://www.robosapiens.ro/despre-noi/resurse/)
+
+### Structură obligatorie (Game Manual)
+1. **Copertă**: Nume echipă, #, sezon (ex. „Into the Deep 2025-26”), logo.
+2. **Echipa**: Membri, mentori, outreach (eventuri școli, 100+ ore).
+3. **Jurnal inginerie**: **Define-Measure-Analyze-Design-Verify** (DMADV) pentru fiecare subsistem.
+4. **Robot**: Design CAD, specificații (greutate <18kg, viteză).
+5. **Software**: Diagramă flux, cod snippets (Java).
+6. **Teste**: Date meciuri simulate (scor mediu 150+ puncte).
+7. **Outreach**: Impact comunitate (workshops, voluntariat).
+8. **Concluzii**: Lecții învățate, îmbunătățiri.
+
+### Tips câștigătoare (RO top echipe)
+- **Vizual**: 70% imagini/video QR (OnShape CAD, meciuri YouTube). [robosapiens](https://www.robosapiens.ro/despre-noi/resurse/)
+- **Date cuantificabile**: „Iterație 3: +20% viteză lift (de la 1.2 la 1.5m/s)”.
+- **Eșecuri + soluții**: „V1 mecanum aluneca ud – soluție: roți mecanum v2 + IMU”.
+- **Gracious**: Colaborări („Am ajutat Echipa X cu mecanică”).
+
+### Exemple RO
+- **Eastern Foxes**: Portofoliu Centerstage (ghid gratuit FB). [facebook](https://www.facebook.com/EasternFoxes/posts/am-publicat-portofoliul-%C8%99i-caietul-tehnic-din-sezonul-centerstage-ghidul-practic/1074129878061071/)
+- **Quantum Robotics**: Inspire Award Mondial 2025 – outreach 500 elevi. [romania-actualitati](https://www.romania-actualitati.ro/stiri/sport/campionatul-national-de-robotica-2026-echipele-castigatoare-id225248.html)
+
+**Trimite PDF** la jurați pre-competiție + print 3 exemplare. **Testează cu mentori** – țintește **Inspire Award** (calificare directă Mondial)! Succes! [gm0](https://gm0.org/ro/latest/docs/awards/)
