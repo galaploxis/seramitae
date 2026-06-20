@@ -1,125 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="ro">
-====================================================
-SERAMITAE.RO
-Website oficial FTC Team #23486
-
-Documentație pentru dezvoltatori
-- Site de tip Single Page Application (SPA) simplificată
-- Navigarea se realizează prin JavaScript (showPage)
-- Toate secțiunile sunt încărcate în același fișier HTML
-- Acest cod este baza pentru versiunea urmatoare a sitelui, care va fi multi-pagina
-====================================================
--->
-<html lang="ro">
-
-<!--
-####################################################################
-GHID RAPID PENTRU DEZVOLTATORI
-####################################################################
-
-ARHITECTURĂ:
-- Acest website este construit într-un singur fișier HTML.
-- CSS-ul este inclus intern în tag-ul <style>.
-- JavaScript-ul este inclus la finalul documentului.
-- Navigarea funcționează prin ascunderea și afișarea secțiunilor.
-
-SECȚIUNI PRINCIPALE:
-1. SEO + Metadata
-2. Stilizare CSS
-3. Header și navigare
-4. Acasă
-5. Robot
-6. Echipa
-7. Activități
-8. Blog
-9. Sponsori
-10. Contact
-11. Footer
-12. JavaScript
-
-RECOMANDĂRI:
-- Nu modifica id-urile paginilor fără a actualiza showPage().
-- Nu modifica structura meniului mobil fără testare pe telefon.
-- Păstrează imaginile optimizate.
-- Testează fiecare modificare atât desktop cât și mobile.
-
-####################################################################
--->
 <head>
-  <!-- ==================== METADATA & SEO ==================== -->
-  <!-- Setări de bază: encoding UTF-8, viewport responsive, descriere SEO -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Seramitae #23486 este o echipă de robotică din Galați care participă la FIRST Tech Challenge. Promovăm STEM, construim roboți și inspirăm viitori ingineri.">
-  <meta name="keywords" content="FTC, robotics, Seramitae, Galați, FIRST Tech Challenge">
-  <meta name="author" content="Clubul Liceal de Robotica Seramitae">
-  <meta name="robots" content="index, follow">
-  <!-- Geo-localizare pentru SEO local -->
-  <meta name="geo.region" content="RO-GL">
-  <meta name="geo.placename" content="Galati">
-  <!-- Open Graph: optimizare pentru partajare pe social media -->
-  <meta property="og:title" content="Seramitae – Echipă de Robotică din Galați | #23486 FIRST Tech Challenge">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Seramitae #23486 este o echipă de robotică din Galați care participă la FIRST Tech Challenge. Promovăm STEM, construim roboți și inspirăm viitori ingineri.">
+<meta name="keywords" content="FTC, robotics, Seramitae, Galați, FIRST Tech Challenge">
+<meta name="author" content="Clubul Liceal de Robotica Seramitae">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="RO-GL">
+<meta name="geo.placename" content="Galati">
+<meta property="og:title" content="Seramitae – Echipă de Robotică din Galați | #23486 FIRST Tech Challenge">
 <meta property="og:description" content="Echipă de robotică din Galați">
 <meta property="og:site_name" content="Seramitae">
-
 <meta property="og:image" content="https://seramitae.ro/logo_sr.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://seramitae.ro">
 <meta property="og:locale" content="ro_RO">
 <link rel="canonical" href="https://seramitae.ro/">
-=======
-  <meta property="og:image" content="logo_sr.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://seramitae.ro">
-  <meta property="og:locale" content="ro_RO">
-  <link rel="canonical" href="https://seramitae.ro/">
 
+<title>Seramitae #23486 – Echipă FTC din Galați | Robotică & STEM</title>
 
-  <title>Seramitae #23486 – Echipă FTC din Galați | Robotică & STEM</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-  <!-- ==================== RESURSE EXTERNE ==================== -->
-  <!-- Fonturi: Orbitron (sci-fi, titluri), Roboto (corp text) -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  <!-- Google Model Viewer: pentru afișarea modelelor 3D GLB -->
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-
-  <!-- ==================== STILURI CSS ==================== -->
 <style>
-  /* ========== STILURI GLOBALE ========== */
-/* Reguli aplicate întregului website.
-   Controlează aspectul general al documentului.
-
-   Modificările făcute aici afectează toate paginile.
-================================================================ */
-  /* box-sizing: border-box → padding/border incluse în lățimea/înălțimea elementului */
-  * { box-sizing: border-box; }
-  
-  /* Stilul de bază pentru body */
-  body {
+/* GLOBAL */
+* { box-sizing: border-box; }
+body {
   margin:0;
   font-family: Roboto, sans-serif;
   background:#020617;
   color:white;
-    overflow-x:hidden;
-  }
+  overflow-x:hidden;
+}
 
-  /* ========== FUNDAL CU PARTICULE ANIMATE ========== */
-  /* Container pentru efectul de particule din libraries/particles.js */
-  #particles-js {
+/* PARTICLES */
+#particles-js {
   position:fixed;
   top:0; left:0;
   width:100%; height:100%;
-    z-index:-1;
-  }
+  z-index:-1;
+}
 
-  /* ========== HEADER & NAVIGARE ========== */
-  /* Header fix în parte de sus, semitransparent cu blur pentru efect modern.
-     Bară de navigare fixă.
-     Rămâne vizibilă în partea superioară a ecranului. */
-  header {
+/* HEADER */
+header {
   position: fixed;
   top:0; width:100%;
   display: flex;
@@ -128,15 +55,14 @@ RECOMANDĂRI:
   padding: 10px clamp(20px,5vw,120px);
   background: rgba(2,6,23,0.85);
   backdrop-filter: blur(10px);
-    z-index:1000;
-  }
+  z-index:1000;
+}
 
-  /* LOGO: scalează în funcție de spațiu disponibil */
-  header .logo { height: 80px; width: auto; }
+/* LOGO */
+header .logo { height: 80px; width: auto; }
 
-  /* ========== MENIU DE NAVIGARE ========== */
-  /* Meniu desktop: flex layout orizontal */
-  nav { display: flex; gap: 20px; }
+/* NAV DESKTOP */
+nav { display: flex; gap: 20px; }
 nav a { color: white; text-decoration: none; font-weight: 500; transition: color 0.2s; }
 nav a:hover { color: #22d3ee; }
 
@@ -167,29 +93,15 @@ nav a:hover { color: #22d3ee; }
 .page { display:none; padding:120px 10%; max-width:1800px; margin:auto; opacity:0; transition:opacity 0.3s; }
 .page.active { display:block; opacity:1; }
 
-/* ================================================================
-   HERO SECTION
-
-   Prima zonă vizibilă a paginii Acasă.
-   Conține identitatea vizuală principală.
-================================================================ */
+/* HERO */
 .hero { height:50vh; display:flex; justify-content:center; align-items:center; text-align:center; background:linear-gradient(120deg,#6f016b,#9333ea); }
-  .hero h1 { 
-    font-family: Orbitron, sans-serif; /* Font sci-fi */
-    font-size: clamp(40px,8vw,90px); /* Responsive: 40px-90px */
-  }
+.hero h1 { font-family: Orbitron, sans-serif; font-size: clamp(40px,8vw,90px); }
 
-/* ========== LAYOUT GRID (CARDURI) ==========
-   Sistem reutilizabil pentru afișarea cardurilor.
-   Grid responsive: minim 250px, adaptează coloane automat 
-================================================================ */
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
+/* GRID */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
 .card { background: rgba(255,255,255,0.05); padding:20px; border-radius:10px; text-align:center; }
 
-/* ================================================================
-   TEAM CARDS
-   Carduri pentru membri, mentori și alumni.
-================================================================ */
+/* TEAM CARDS */
 .member img { width:100%; border-radius:10px; margin-bottom:10px; }
 .member h3 { margin:5px 0; color:#22d3ee; }
 .section-title { color:#22d3ee; font-family: Orbitron, sans-serif; }
@@ -218,60 +130,32 @@ nav a:hover { color: #22d3ee; }
 /* ROBOT IMAGE */
 .robot img { width:320px; border-radius:10px; }
 
-/* ================================================================
-   MOBILE RESPONSIVE DESIGN
-
-   Reguli aplicate dispozitivelor mobile.
-   IMPORTANT:
-   Selectorul checkbox controlează deschiderea meniului.
-================================================================ */
-  @media(max-width:768px) {
-    /* Meniu devine o coloană fix pe dreapta, ascunsă implicit */
-    nav {
-      position: fixed;
-      top: 70px;
-      right: -100%; /* Ascuns la dreapta inițial */
-      background: rgba(2,6,23,0.95);
-      height: calc(100vh - 70px);
-      width: 200px;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 20px;
-      gap: 15px;
-      transition: right 0.3s; /* Glisare la activare */
-    }
-    
-    /* Hamburger button devine vizibil pe mobil */
-    .nav-toggle { display:block; }
-    .nav-toggle-label { 
-      display:flex; 
-      flex-direction:column; 
-      cursor:pointer; 
-      width:30px; 
-      height:25px; 
-      justify-content: space-between; 
-    }
-    
-    .nav-toggle-label span,
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after { 
-      display:block; 
-      background:white; 
-      height:3px; 
-      border-radius:2px; 
-      position:relative; 
-      transition: all 0.3s; 
-    }
-    
-    .nav-toggle-label span::before { top:-10px; }
-    .nav-toggle-label span::after { top:10px; }
-    
-    /* Când checkbox-ul e checked, meniul glisează din dreapta */
-    .nav-toggle:checked + .nav-toggle-label + nav { right:0; }
+/* MOBILE */
+@media(max-width:768px) {
+  nav {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    background: rgba(2,6,23,0.95);
+    height: calc(100vh - 70px);
+    width: 200px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+    transition: right 0.3s;
   }
+  .nav-toggle { display:block; }
+  .nav-toggle-label { display:flex; flex-direction:column; cursor:pointer; width:30px; height:25px; justify-content: space-between; }
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after { display:block; background:white; height:3px; border-radius:2px; position:relative; transition: all 0.3s; }
+  .nav-toggle-label span::before { top:-10px; }
+  .nav-toggle-label span::after { top:10px; }
+  .nav-toggle:checked + .nav-toggle-label + nav { right:0; }
+}
 
-  /* ========== HIGHLIGHT COLORS ========== */
-  /* Culori pentru text special -->
+/* HIGHLIGHTS */
 .highlight { color:#22d3ee; font-weight:500; }
 
 /* LINK COLORS */
@@ -281,63 +165,51 @@ a:active { color: green; }
 
 /* SPONSOR LOGO - HOVER */
 .sponsor-logo {
-    width: 100%;
-    max-height: 80px;
-    object-fit: contain;
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
+  width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
 
-  .sponsor-logo:hover {
-    transform: scale(1.1);
-    filter: brightness(1.3);
-    cursor: pointer;
-  }
+.sponsor-logo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.3);
+  cursor: pointer;
+}
 
-  /* ========== GALERIE BLOG ========== */
-  /* Grid circular pentru imagini blog */
-  .blog-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 15px;
-    justify-items: center;
-    margin-top: 20px;
-  }
+/* BLOG GALLERY */
+.blog-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  margin-top: 20px;
+}
 
-  /* Imagini circulare cu hover effect */
-  .blog-gallery img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Formă circulară */
-    object-fit: cover;
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
+.blog-gallery img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
 
-  .blog-gallery img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-    cursor: pointer;
-  }
+.blog-gallery img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  cursor: pointer;
+}
 
-  /* ========== SCROLL SMOOTH ========== */
-  /* Scroll lin la click pe linkuri interne (hash) */
-  html {
-    scroll-behavior: smooth;
-  }
+/* SCROLL SMOOTH */
+html {
+  scroll-behavior: smooth;
+}
 
-  /* ========== EFECT CARD HOVER ========== */
-  /* Carduri au glow effect la hover */
-  .card {
-    transition: all 0.3s ease;
-  }
-  .card:hover {
-    box-shadow: 0 0 20px rgba(34,211,238,0.3); /* Glow albastru */
-  }
-
-/* CONTAINER HARTA IN PAGINA DE CONTACT */
-  .map-container {
-  margin-top: 5px;
-  border-radius: 12px;
-  overflow: hidden;
+/* CARD HOVER */
+.card {
+  transition: all 0.3s ease;
+}
+.card:hover {
   box-shadow: 0 0 20px rgba(34,211,238,0.3);
 }
 
@@ -379,62 +251,24 @@ a:active { color: green; }
 @keyframes scrollBanner {
   from {
     transform: translateX(0);
-=======
-  /* ========== BANNER FIX STADIU BETA ========== //
-  .beta-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(147, 51, 234, 0.9);
-    color: white;
-    overflow: hidden;
-    z-index: 9999;
-    border-top: 2px solid #22d3ee;
   }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
-  /* Pista de text care se mișcă orizontal */
-  .beta-track {
-    display: flex;
-    width: max-content;
-    animation: scrollBanner 15s linear infinite; /* Animație continuă */
-  }
-
-  .beta-track span {
-    white-space: nowrap;
-    font-weight: 500;
-    padding: 10px 0;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-  }
-
-  /* Animație de scroll orizontal continuu */
-  @keyframes scrollBanner {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%); /* Mută în stânga 50% din lățime */
-    }
-  }
-
-  /* Padding pentru body ca banner fix nu suprapune conținut */
-  body {
-    padding-bottom: 50px;
-  }
+body {
+  padding-bottom: 50px;
+}
 
 </style>
 
-  <!-- ==================== ICONIȚE & FAVICON ==================== -->
-  <!-- Iconuri pentru diverse platforme și browsere -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 
-  <!-- ==================== SCHEMA STRUCTURATA ==================== -->
-  <!-- JSON-LD: metadate structurate pentru motoare de căutare -->
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -452,26 +286,13 @@ a:active { color: green; }
 </head>
 
 <body>
-  <!-- ==================== FUNDAL PARTICULE ==================== -->
-  <!-- Container pentru efectul de particule animate -->
-  <div id="particles-js"></div>
+<div id="particles-js"></div>
 
-<!--
-====================================================
-HEADER PRINCIPAL
-Conține logo-ul și sistemul de navigare.
-Pentru adăugarea unei pagini noi:
-1. Creează un div cu class="page"
-2. Adaugă un link în nav
-3. Utilizează același id în showPage()
-====================================================
--->
-  <header>
+<header>
 
-    <!-- Logo clickabil pentru a merge la acasă -->
-    <div class="logo-container" onclick="showPage('home')" style="cursor:pointer;">
-      <img src="logo_sr.jpg" alt="Logo Seramitae #23486" class="logo">
-    </div>
+<div class="logo-container" onclick="showPage('home')" style="cursor:pointer;">
+  <img src="logo_sr.jpg" alt="Logo Seramitae #23486" class="logo">
+</div>
 
   <input type="checkbox" id="nav-toggle" class="nav-toggle">
   <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
@@ -488,31 +309,6 @@ Pentru adăugarea unei pagini noi:
 
 <!-- ACASĂ -->
 <div id="acasa" class="page active">
-=======
-    <!-- ========== CHECKBOX HAMBURGER MENU ========== -->
-    <!-- Mecanismul checkbox + label creează hamburger fără JavaScript suplimentar -->
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
-    
-    <!-- ========== MENIU NAVIGARE ========== -->
-    <!-- Linkuri cu onclick care schimbă pagina activă -->
-    <nav>
-      <a href="#acasa" onclick="showPage('home')">Acasă</a>
-      <a href="#robot" onclick="showPage('robot')">Robot</a>
-      <a href="#activitati" onclick="showPage('outreach')">Activități</a>
-      <a href="#blog" onclick="showPage('blog')">Blog</a>
-      <a href="#echipa" onclick="showPage('team')">Echipa</a>
-      <a href="#sponsori" onclick="showPage('sponsors')">Sponsori</a>
-      <a href="#contact" onclick="showPage('contact')">Contact</a>
-    </nav>
-  </header>
-
-  <!-- ==================== PAGINI (SINGLE PAGE APP) ==================== -->
-  
-  <!-- PAGINA 1: ACASĂ -->
-  <!-- Pagina inițială cu clasă .active (afișată implicit la încărcare) -->
-  <div id="home" class="page active">
->>>>>>> Stashed changes
   <div class="hero">
     <div><h1>SERAMITAE</h1>
     <p>Nu construim roboți.<br>Construim un sistem, o echipă și un impact pe termen lung.</p></div>
@@ -552,11 +348,10 @@ Fiecare elev inspirat este o victorie.<br>
 <a href="#echipa" onclick="showPage('echipa')">Cunoaște echipa</a><br>
 <a href="#sponsors" onclick="showPage('sponsori')">Fii sponsorul nostru</a>
 </p>
-  </div>
+</div>
 
-  <!-- PAGINA 2: ROBOT -->
-  <!-- Descriere robot + model 3D GLB + caracteristici -->
-  <div id="robot" class="page">
+<!-- ROBOT -->
+<div id="robot" class="page">
   <h2 class="section-title">Robot</h2>
   <p>Întâlnește robotul nostru SERA.</p>
   <model-viewer
@@ -582,15 +377,10 @@ Am iterat designul de trei ori pentru a îmbunătăți stabilitatea și viteza, 
 </p>
 <p>Pentru mai multe detalii despre robotul nostru, poți consulta Portofoliul Tehnic.</p>
   <div style="text-align:center;"><button onclick="window.open('portofolio.pdf', '_blank')">Descarcă Portofoliul Tehnic</button></div>
-  </div>
+</div>
 
 <!-- ECHIPA -->
 <div id="echipa" class="page">
-=======
-  <!-- PAGINA 3: ECHIPA -->
-  <!-- Membri, mentori și alumni -->
-  <div id="team" class="page">
-
   <h2 class="section-title">Despre Echipă</h2>
   <p>Seramitae este o echipă de robotică pasionată de inovație, tehnologie și performanță.</p>
 <p>Promovăm valorile FIRST și ne bazăm pe principiile STEM.</p>
@@ -627,15 +417,10 @@ Am iterat designul de trei ori pentru a îmbunătăți stabilitatea și viteza, 
     <div class="card member"><img src="mirel.jpg" alt="Mirel- Alumni" loading="lazy" decoding="async"><h3>Mirel</h3><p>Mecanică</p></div>
     <div class="card member"><img src="robert.jpg" alt="Robert - Alumni" loading="lazy" decoding="async"><h3>Robert</h3><p>Programare</p></div>
   </div>
-  </div>
+</div>
 
 <!-- ACTIVITĂȚI -->
 <div id="activitati" class="page">
-=======
-  <!-- PAGINA 4: ACTIVITĂȚI -->
-  <!-- Descriere activități + contoare animate (Intersection Observer) -->
-  <div id="outreach" class="page">
-
   <h2 class="section-title">Activități</h2>
   <p>Acționăm ca ambasadori FIRST atât pe plan local, cât și internațional.</p>
 <p>Prin Caravana Seramitae inspirăm viitori lideri în tehnologie din județul Galați.<br> 
@@ -647,11 +432,10 @@ Prin STEM Beyond Borders extindem global misiunea noastră prin colaborarea cu c
   <div class="card"><h2 class="counter" data-target="6">0</h2><p>Școli vizitate</p></div>
 </div>
 
-  </div>
+</div>
 
-  <!-- PAGINA 5: BLOG -->
-  <!-- Link extern blog + galerie + YouTube embed -->
-  <div id="blog" class="page">
+<!-- BLOG -->
+<div id="blog" class="page">
   <h2 class="section-title">Blog</h2>
   <p>Aici poți găsi toate informațiile despre activitatea noastră curentă și trecută, precum și o galerie foto cu munca noastre.</p>
   <p>Apasă aici: <a href="https://www.blog.seramitae.ro" target="_blank" title="Blog și Galerie Seramitae">Blog și Galerie</a></p>
@@ -667,11 +451,10 @@ Prin STEM Beyond Borders extindem global misiunea noastră prin colaborarea cu c
   </iframe>
 </div>
 
-  </div>
+</div>
 
-  <!-- PAGINA 6: SPONSORI -->
-  <!-- Prezentare sponsori și parteneri educaționali, plus informatii sponsorizare -->
-  <div id="sponsors" class="page">
+<!-- SPONSORI -->
+<div id="sponsori" class="page">
 
 <h2 class="section-title">Powered by our partners</h2>
 <p>Împreună construim viitorul.</p>
@@ -740,11 +523,10 @@ Prin donații directe de echipament, componente, consumabile, etc.<br>
 Prin donații bănești în contul Asociației "Impreună pentru viitor" a Colegiului Național "Costache Negri" din Galați.<br>
 Pentru a discuta concret modalitățile în care putem beneficia de sprijinul dvs., vă rugăm să ne contactați direct.
 </div>
-  </div>
+</div>
 
-  <!-- PAGINA 7: CONTACT -->
-  <!-- Informații de contact și social media, plus localizare -->
-  <div id="contact" class="page">
+<!-- CONTACT -->
+<div id="contact" class="page">
   <h2 class="section-title">Contact</h2>
   <div class="grid">
     <div class="card">E-mail: <a href="mailto:robot@seramitae.ro">robot@seramitae.ro</a></div>
@@ -842,120 +624,7 @@ counters.forEach(c => observer.observe(c));
     <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
     <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
     <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
-=======
+  </div>
 </div>
->>>>>>> Stashed changes
-  </div>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer style="padding:40px; text-align:center;">
-    © 2026 Seramitae #23486, Galați / România<br>
-    Contactați-ne: <a href="mailto:robot@seramitae.ro" style="color: rgb(34, 211, 238);">robot@seramitae.ro</a>
-  </footer>
-
-  <!-- ==================== SCRIPTURI ==================== -->
-  <!-- Library extern pentru animație particule -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  
-  <!-- ==================== LOGICA NAVIGARE & PARTICULE ==================== -->
-  <script>
-    /**
-     * FUNCȚIA DE SCHIMBARE PAGINI
-     * - Elimină clasa .active de la TOATE paginile
-     * - Adaugă .active la pagina cerută
-     * - Închide meniul mobil (setează checkbox false)
-     */
-    function showPage(id){
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      
-      // Închide meniul hamburger pe mobil
-      document.getElementById('nav-toggle').checked = false;
-    }
-
-    /**
-     * INIȚIALIZARE PARTICULE
-     * - Fundal animat cu particule interactive
-     * - 80 particule circulare, culoare albastru deschis
-     * - Legate între ele cu linii la distanță 150px
-     * - Se mișcă lin și se resping la hover (repulse)
-     * - Pentru performanta mai buna pe sisteme/retele lente se poate reduce numarul de particule
-     */
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 80 },
-        color: { value: "#22d3ee" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5 },
-        size: { value: 3 },
-        line_linked: { enable: true, distance: 150, color: "#22d3ee", opacity:0.4, width:1 },
-        move: { enable:true, speed:2 }
-      },
-      interactivity: { events: { onhover: { enable:true, mode:"repulse" } } }
-    });
-
-    /**
-     * LOAD DINAMIC AL PAGINII PRIN HASH
-     * - Verifică URL hash (#home, #robot, etc.)
-     * - Dacă hash corespunde unei pagini, o afișează direct
-     * - Permite link-uri directe ca www.site.ro/#team
-     */
-    window.addEventListener('load', () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash && document.getElementById(hash)) {
-        showPage(hash);
-      }
-    });
-  </script>
-
-  <!-- ==================== ANIMAȚIE CONTOARE ==================== -->
-  <!-- Contoare animate care cresc la scroll (Intersection Observer) -->
-  <script id="counter-fix">
-    /**
-     * ANIMAȚIE CONTOARE
-     * - Selectează elemente cu clasă .counter
-     * - IntersectionObserver activează animația când elementul intră în viewport
-     * - Crește gradual de la 0 la valoarea din data-target
-     * - Afișează target + "+" la final (ex: 150+)
-     */
-    const counters = document.querySelectorAll('.counter');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          const counter = entry.target;
-          const target = +counter.getAttribute('data-target');
-
-          let count = 0;
-          const update = () => {
-            const increment = target / 100; // Divide in 100 steps
-            if(count < target){
-              count += increment;
-              counter.innerText = Math.ceil(count);
-              setTimeout(update, 20); // Update every 20ms
-            } else {
-              counter.innerText = target + "+";
-            }
-          };
-          update();
-          observer.unobserve(counter); // Stop observing după animație
-        }
-      });
-    });
-
-    counters.forEach(c => observer.observe(c));
-  </script>
-
-  <!-- ==================== BANNER FIX BETA ==================== -->
-  <!-- Banner în partea de jos cu text care se rulează continuu -->
-  <div class="beta-banner">
-    <div class="beta-track">
-      <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
-      <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
-      <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
-      <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
-      <span> Acest site e în stadiu beta, revenim în curând cu varianta finală •  </span>
-    </div>
-  </div>
 </body>
 </html>
